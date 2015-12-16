@@ -1,0 +1,54 @@
+<button class="btn btn-default iconButton bgColorGrey" ng-click="submit = false" data-toggle="modal" data-target="#movieModal" data-toggle="tooltip" title="Add new Movie!">
+    <i class="fa fa-film fa-2x white"></i>
+</button>
+<div class="modal fade" id="movieModal" tabindex="-1" role="dialog"> 
+    <div class = "modal-dialog" > 
+        <div class = "modal-content" > 
+            <div class = "modal-header bgColor" > 
+                <h4 class="white">New Movie </h4>
+                <i class="fa fa-times-circle fa-lg pull-right white" data-dismiss="modal"></i> 
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm" ng-submit="addMovie();"> 
+                    <div ng-show="submit">
+                        <p>Movie Added!</p>
+                    </div>
+                    <div ng-hide="submit">
+                        <div class="form-group">
+                            <p><label>Name:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.title"></p>
+                            <p><label>Genre:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.genre"></p>
+                            <p><label>Plot:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.plot"></p>
+                            <p><label>IMDB Rating:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.rating"></p>
+                            <p><label>Director:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.director"></p>
+                            <p><label>Stars:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="movie.stars"></p>
+                            <p><label>Image(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="movie.img"></p>
+                            <p><label>Trailer(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="movie.url"></p>
+                        </div>
+                        <input type="submit" class="btn btn-default bgColorGrey white textBold"  value="Submit">
+                    </div>
+                </form>
+            </div>
+
+        </div> 
+    </div> 
+</div>
+<p class="numberText">Number of Movies: {{moviesArray.length}}</p>
+<div class="contentContainer">
+    <div ng-repeat="item in moviesArray | filter: filterValue">
+        <button class="item" ng-click="open(item.title)">
+            <is-url></is-url>
+                <div class="content">
+                    <a  href="#" class="contentTitle">{{item.title}}</a>
+                </div>              
+            </div>
+        </div>
+    </div>
+</div>

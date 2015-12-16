@@ -1,0 +1,163 @@
+.bgColor{
+	background-color:  #FF0066;
+}
+.navbar-default .navbar-brand {
+	color:#fff;
+}
+
+.displayStyling {
+	margin-top: 10px;
+}
+ul {
+	display:inline-block;
+	margin:10px;
+	list-style: none;
+}
+.searchField {
+	position:relative;
+	float:right;
+}
+.searchField input {
+    padding-right: 30px;    
+}
+.searchField i {
+    position: absolute;
+    right: 15px;
+    padding: 10px 12px;
+}
+.contentContainer {
+	margin-top:25px;
+	-webKit-column-count:4;
+	-webKit-column-gap:25px;
+	-moz-column-count:4;
+	-moz-column-gap:25px;
+	column-count:4;
+	column-gap:25px;
+}
+#view {
+	padding: 10px;
+}
+.white {
+	color: #fff;
+}
+.item img{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+
+.item{
+	border:1px solid #ccc;
+	background: #efefef;
+	display:inline-block;
+	margin-bottom:25px;
+	width:100%;
+	height: auto;
+	padding:0px;
+	border-radius: 10px;
+}
+.content{
+	padding: 10px;
+}
+
+.contentImage{
+	width: 100% ;
+}
+.contentTitle {
+	font-size: 150%;
+	color:#000;
+}
+.contentDescription {
+	color:#787878;
+}
+.fadeOut {
+	opacity: 0.2;
+}
+.absPosition {
+	position: absolute;
+}
+.relativePosition {
+	position: relative;
+}
+.textellipsis {
+	white-space: nowrap
+    overflow: hidden
+	text-overflow: ellipsis;
+}
+.modal-body {
+	text-align: justify;
+}
+.modal-content {
+	border-radius-top: 6px;
+}
+.coverPic {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.content {
+	text-align: center;
+}
+.articleContent {
+	text-align: justify;
+}
+.fltright {
+	float:right;
+}
+.pic {
+	text-align: center;
+	margin: 20px;
+}
+figcaption {
+	color: #b30000;
+	font-weight: bold;
+	text-align: center;
+}
+#heading {
+	font-size: 200%;
+    font-weight: bold;
+}
+.glyphicon-star {
+	color:#ffcc00;
+	border: #fff;
+
+}
+a:focus {
+	outline:none;
+	text-decoration: none;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	color:#fff;
+}
+.iconButton {
+	margin-top:-10px;
+	border: 1px solid #a6a6a6;
+}
+.white{
+	color: #ffffff;
+}
+.btn-default.focus, .btn-default:focus {
+	outline: none;
+}
+.numberText {
+	margin-top: 15px;
+	font-size: 120%;
+}
+ .fa-times-circle {
+ 	margin-top: -25px;
+}
+.bgColorGrey {
+	background-color: #bfbfbf;
+}
+.textBold{
+	font-weight: bold;
+}
+
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.textCenter {
+	text-align: center;
+}

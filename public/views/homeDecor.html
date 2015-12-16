@@ -1,0 +1,43 @@
+<button class="btn btn-default iconButton bgColorGrey" ng-click="submit = false" data-toggle="modal" data-target="#homeDecorModal" data-toggle="tooltip" title="Add new Decor Article!">
+    <i class="fa fa-home fa-2x white"></i>
+</button>
+<div class="modal fade" id="homeDecorModal" tabindex="-1" role="dialog"> 
+    <div class = "modal-dialog" > 
+        <div class = "modal-content" > 
+            <div class = "modal-header bgColor"> 
+                <h4 class="white">New Decor Article </h4>
+                <i class="fa fa-times-circle fa-lg pull-right white" data-dismiss="modal"></i> 
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm" ng-submit="addHomeDecor();"> 
+                    <div ng-show="submit">
+                        <p>Article Added!</p>
+                    </div>
+                    <div ng-hide="submit">
+                        <div class="form-group">
+                            <p><label>Name:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="homeDecor.title"></p>
+                            <p><label>Image(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="homeDecor.img"></p>
+                            <p><label>Article(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="homeDecor.url"></p>
+                        </div>
+                        <input type="submit" class="btn btn-default bgColorGrey white textBold"  value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div> 
+</div>
+<p class="numberText">Number of Decor Articles: {{homeDecorArray.length}}</p>
+<div class="contentContainer">
+    <div ng-repeat="item in homeDecorArray | filter: filterValue">
+        <button class="item">
+            <a href="{{item.url}}" target="_blank">
+                <is-url></is-url>
+                <div class="content">
+                    <p class="contentTitle">{{item.title}}</p>
+                </div>              
+        </button>
+    </div>
+</div>

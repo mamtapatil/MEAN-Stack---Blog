@@ -1,0 +1,54 @@
+<button class="btn btn-default iconButton bgColorGrey" ng-click="submit = false" data-toggle="modal" data-target="#tvSeriesModal" data-toggle="tooltip" title="Add new Series!">
+    <i class="fa fa-television fa-2x white"></i>
+</button>
+<div class="modal fade" id="tvSeriesModal" tabindex="-1" role="dialog"> 
+    <div class = "modal-dialog" > 
+        <div class = "modal-content" > 
+            <div class = "modal-header bgColor"> 
+                <h4 class="white">New Series </h4>
+                <i class="fa fa-times-circle fa-lg pull-right white" data-dismiss="modal"></i> 
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm" ng-submit="addTvSeries();"> 
+                    <div ng-show="submit">
+                        <p>Series Added!</p>
+                    </div>
+                    <div ng-hide="submit">
+                        <div class="form-group">
+                            <p><label>Name:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.title"></p>
+                            <p><label>Genre:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.genre"></p>
+                            <p><label>Plot:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.plot"></p>
+                            <p><label>IMDB Rating:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.rating"></p>
+                            <p><label>Director:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.director"></p>
+                            <p><label>Stars:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="series.stars"></p>
+                            <p><label>Image(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="series.img"></p>
+                            <p><label>Trailer(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="series.url"></p>
+                        </div>
+                        <input type="submit" class="btn btn-default bgColorGrey white textBold"  value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div> 
+</div>
+<p class="numberText">Number of Series: {{tvSeriesArray.length}}</p>
+<div class="contentContainer">
+    <div ng-repeat="item in tvSeriesArray | filter: filterValue">
+        <button class="item">
+            <a href="{{item.url}}" target="_blank">
+                <is-url></is-url>
+                <div class="content">
+                    <p class="contentTitle">{{item.title}}</p>
+                    <p class="contentDescription">{{item.category}}</p>
+                </div>              
+        </button>
+    </div>
+</div>

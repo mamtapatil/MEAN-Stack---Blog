@@ -1,0 +1,13 @@
+<div class="modal-header bgColor">
+    <h3 class="white">{{moviedetails.title}}</h3>
+    <i class="fa fa-times-circle fa-lg pull-right white" ng-click="close()"></i>
+</div>   
+<div class="modal-body">
+    <p><label>Rating:&nbsp;&nbsp; </label>{{moviedetails.rating}}</p>
+    <p><label>Genre:&nbsp;&nbsp;  </label>{{moviedetails.genre}}</p>
+    <p><label>Director:&nbsp;&nbsp;  </label>{{moviedetails.director}}</p>
+    <p><label>Stars:&nbsp;&nbsp;  </label>{{moviedetails.stars}} </p>
+    <p><label>Plot:&nbsp;&nbsp;  </label>{{moviedetails.plot}}</p>
+    <br>
+    <a href="{{moviedetails.url}}" target="_blank"><button class="btn btn-md  bgColorGrey white">Watch Trailer</button></a>
+</div>

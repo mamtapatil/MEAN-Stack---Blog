@@ -1,0 +1,11 @@
+<p class="numberText">Number of Places: {{travelArray.length}}</p>
+<div class="container col-md-12 contentContainer">
+    <div ng-repeat="item in travelArray | filter: filterValue">
+        <button class="item" ui-sref="{{item.title}}" >
+            <img class="contentImage" ng-src="images/travel/{{item.img}}" alt="" >
+            <div class="content">
+                <p class="contentTitle">{{item.title}}</p>
+            </div>              
+        </button>
+    </div>
+</div>

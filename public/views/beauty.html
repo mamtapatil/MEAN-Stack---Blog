@@ -1,0 +1,46 @@
+<button class="btn btn-default iconButton bgColorGrey" ng-click="submit = false" data-toggle="modal" data-target="#beautyModal" data-toggle="tooltip" title="Add new Beauty Article!">
+    <i class="fa fa-magic fa-2x white"></i>
+</button>
+<div class="modal fade" id="beautyModal" tabindex="-1" role="dialog"> 
+    <div class = "modal-dialog" > 
+        <div class = "modal-content" > 
+            <div class = "modal-header bgColor"> 
+                <h4 class="white">New Beauty Article </h4>
+                <i class="fa fa-times-circle fa-lg pull-right white" data-dismiss="modal"></i> 
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm" ng-submit="addBeauty();"> 
+                    <div ng-show="submit">
+                        <p>Article Added!</p>
+                    </div>
+                    <div ng-hide="submit">
+                        <div class="form-group">
+                            <p><label>Name:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="beauty.title"></p>
+                            <p><label>Category:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="beauty.category"></p>
+                            <p><label>Image(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="beauty.img"></p>
+                            <p><label>Article(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="beauty.url"></p>
+                        </div>
+                        <input type="submit" class="btn btn-default bgColorGrey white textBold"  value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div> 
+</div>
+<p class="numberText">Number of Articles: {{beautyArray.length}}</p>
+<div class="contentContainer">
+    <div ng-repeat="item in beautyArray | filter: filterValue">
+        <button class="item">
+            <a href="{{item.url}}" target="_blank">
+                <is-url></is-url>
+                <div class="content">
+                    <p class="contentTitle">{{item.title}}</p>
+                    <p class="contentDescription">Category: &nbsp;{{item.category}}</p>
+                </div>              
+        </button>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container col-md-12 contentContainer">
+    <div ng-repeat="item in articles | filter : filterValue">
+    	<div class="item" ui-sref="{{item.title}}">
+            <is-url></is-url>
+    			<div class="content">
+    				<p  class="contentTitle" >{{item.title}}</p>
+				</div>				
+            </div>
+    	</div>
+    </div>
+</div>

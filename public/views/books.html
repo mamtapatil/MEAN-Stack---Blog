@@ -1,0 +1,68 @@
+<button class="btn btn-default iconButton bgColorGrey" ng-click="submit = false" data-toggle="modal" data-target="#bookModal" data-toggle="tooltip" title="Add new Book!">
+   <i class="fa fa-book fa-2x white"></i>
+</button>
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog"> 
+    <div class = "modal-dialog"> 
+        <div class = "modal-content"> 
+            <div class = "modal-header bgColor"> 
+                <h4 class="white">New Book </h4> 
+                <i class="fa fa-times-circle fa-lg pull-right white" data-dismiss="modal"></i>
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm" ng-submit="addBook();"> 
+                    <div ng-show="submit">
+                        <p>Book Added!</p>
+                    </div>
+                    <div ng-hide="submit">
+                        <div class="form-group ">
+                            <p><label>Title:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="book.title"></p>
+                            <p><label>Author:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="book.author"></p>
+                            <p><label>Summary:</label></p>
+                            <p><textarea id="name" rows="5" cols="50" ng-model="book.summary"></textarea></p>
+                            <p><label>Rating:</label></p>
+                            <p><input type="text" id="name" size="30" ng-model="book.rating"></p>
+                            <p><label>Image(URL):</label></p>
+                            <p><input type="text" id="url" size="30" ng-model="book.img"></p>
+                        </div>
+                        <input type="submit" class="btn btn-default bgColorGrey white textBold" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div> 
+</div>
+<p class="numberText">Number of books: {{booksArray.length}}</p>
+{{submit}}
+<div class="contentContainer" >
+    <div ng-repeat="item in booksArray | filter: filterValue">       
+    	<div class="item bookItem"  >
+    		<div>
+                <is-url></is-url>
+    		    <div class="content">
+    			    <p class="contentTitle">{{item.title}}</p>
+    			    <p class="contentDescription">By {{item.author}}</p>
+                    <p><rating ng-model="item.stars" max="5" ></rating></p>
+                    <a href="#" data-toggle="modal" data-target="#summary{{$index}}">Read Summary</a>
+                </div>
+            </div>            
+    	</div>
+        <div class="modal fade" id="summary{{$index}}" tabindex="-1" role="dialog"> 
+            <div class = "modal-dialog" > 
+                <div class = "modal-content" > 
+                    <div class = "modal-header" > 
+                        <h4>Summary </h4 > 
+                    </div>
+                    <div class="modal-body">
+                        {{item.summary}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div > 
+                </div > 
+            </div > 
+        </div>
+    </div>
+</div>
+
